@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phonebook</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="auth-panel" id="authPanel">
+            <div class="brand-block">
+                <p class="eyebrow">Private contacts</p>
+                <h1>Phonebook</h1>
+                <p class="muted">Sign in to keep your contacts organized and tied to your account.</p>
+            </div>
+
+            <div class="tab-row" role="tablist" aria-label="Authentication">
+                <button class="tab-button active" type="button" id="loginTab">Login</button>
+                <button class="tab-button" type="button" id="registerTab">Register</button>
+            </div>
+
+            <form class="auth-form active" id="loginForm">
+                <label>
+                    Email
+                    <input type="email" name="email" required autocomplete="email">
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password" required autocomplete="current-password">
+                </label>
+                <button class="primary-button" type="submit">Login</button>
+            </form>
+
+            <form class="auth-form" id="registerForm">
+                <label>
+                    Name
+                    <input type="text" name="name" required autocomplete="name">
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" required autocomplete="email">
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password" required autocomplete="new-password" minlength="6">
+                </label>
+                <label>
+                    Confirm password
+                    <input type="password" name="confirmPassword" required autocomplete="new-password" minlength="6">
+                </label>
+                <button class="primary-button" type="submit">Create account</button>
+            </form>
+
+            <div class="status-line auth-status" id="authStatusLine" role="status"></div>
+        </section>
+
+        <section class="contacts-panel hidden" id="contactsPanel">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">Your directory</p>
+                    <h2>Contacts</h2>
+                </div>
+                <button class="ghost-button" type="button" id="logoutButton">Logout</button>
+            </header>
+
+            <form class="contact-form" id="contactForm">
+                <input type="hidden" name="id">
+                <label>
+                    Name
+                    <input type="text" name="name" required placeholder="">
+                </label>
+                <label>
+                    Phone
+                    <input type="tel" name="phone" required placeholder="">
+                </label>
+                <div class="form-actions">
+                    <button class="primary-button" type="submit" id="saveContactButton">Add contact</button>
+                    <button class="secondary-button hidden" type="button" id="cancelEditButton">Cancel</button>
+                </div>
+            </form>
+
+            <div class="toolbar">
+                <label class="search-box">
+                    Search
+                    <input type="search" id="searchInput" placeholder="Find by name or phone">
+                </label>
+                <button class="secondary-button" type="button" id="refreshButton">Refresh</button>
+            </div>
+
+            <div class="status-line" id="statusLine" role="status"></div>
+            <div class="contacts-grid" id="contactsGrid"></div>
+        </section>
+    </main>
+
+    <template id="contactTemplate">
+        <article class="contact-card">
+            <div>
+                <h3></h3>
+                <p></p>
+            </div>
+            <div class="card-actions">
+                <button class="icon-button edit-button" type="button" title="Edit contact" aria-label="Edit contact">Edit</button>
+                <button class="icon-button delete-button" type="button" title="Delete contact" aria-label="Delete contact">Delete</button>
+            </div>
+        </article>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
