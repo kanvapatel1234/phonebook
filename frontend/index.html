@@ -72,7 +72,13 @@
                 </label>
                 <label>
                     Phone
-                    <input type="tel" name="phone" required placeholder="">
+                    <input
+    type="tel"
+    name="phone"
+    minlength="10"
+    maxlength="10"
+    pattern="[0-9]{10}"
+    required>
                 </label>
                 <div class="form-actions">
                     <button class="primary-button" type="submit" id="saveContactButton">Add contact</button>
