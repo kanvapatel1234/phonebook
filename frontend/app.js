@@ -21,7 +21,7 @@ const refreshButton = document.querySelector("#refreshButton");
 const cancelEditButton = document.querySelector("#cancelEditButton");
 const saveContactButton = document.querySelector("#saveContactButton");
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://phonebook-kyfw.onrender.com";
 
 function setAuthStatus(message, type = "") {
     authStatusLine.textContent = message;
