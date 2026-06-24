@@ -74,7 +74,7 @@ controllers/
 middleware/
 models/
 routes/
-config/
+db.js
 server.js
 ```
 
